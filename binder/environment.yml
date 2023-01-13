@@ -1,0 +1,19 @@
+name: biobb_godmd_tutorial
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python<=3.9
+  - biobb_io==3.8.0
+  - biobb_structure_utils==3.8.0
+  - biobb_analysis==3.8.0
+  - biobb_godmd==3.8.0
+  - emboss
+  - biobb_common==3.8.1
+  - nb_conda_kernels
+  - jupyter_contrib_nbextensions
+  - plotly
+  - ipywidgets==7.6.6
+  - nglview
+  - simpletraj
+  - conda
