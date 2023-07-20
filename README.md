@@ -7,9 +7,9 @@
 
 This tutorial aims to illustrate the process of computing a **conformational transition** between two known **structural conformations** of a protein, step by step, using the **BioExcel Building Blocks library (biobb)**. 
 
-Examples shown are ...
+Examples shown are the calculation of the conformational transition for the **Adenylate Kinase** protein, from the **closed state** (PDB Code [1AKE](https://www.rcsb.org/structure/1AKE)) to the **open state** (PDB Code [4AKE](https://www.rcsb.org/structure/4AKE)). **Adenylate Kinases** are **phosphotransferase enzymes** that catalyze the interconversion of the various **adenosine phosphates** (ATP, ADP, and AMP), and are known to undergo large **conformational changes** during their **catalytic cycle**.
 
-The code wrapped is the **GODMD** code:
+The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeling and Bioinformatics](https://mmb.irbbarcelona.org/www/) group** (IRB Barcelona). **GOdMD** determines pathways for **conformational transitions** in macromolecules using **discrete molecular dynamics** and **biasing techniques** based on a combination of **essential dynamics** and **Maxwell-Demon sampling techniques**. A web implementation of the method can be found here: https://mmb.irbbarcelona.org/GOdMD/index.php
 
 **Exploration of conformational transition pathways from coarse-grained simulations.**<br>
 *Sfriso P, Hospital A, Emperador A, Orozco M.*<br>
