@@ -1,0 +1,6 @@
+log*.*
+.ipynb_checkpoints/
+biobb_wf_flexserv/notebooks/*.png
+biobb_wf_flexserv/notebooks/*.gif
+biobb_wf_flexserv/notebooks/*.web.ipynb
+biobb_wf_flexserv/notebooks/*.docs.ipynb
