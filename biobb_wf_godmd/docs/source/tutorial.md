@@ -327,6 +327,7 @@ from biobb_godmd.godmd.godmd_run import godmd_run
 godmd_log = pdbOrigin + "-" + pdbTarget + ".godmd.log"
 godmd_trj = pdbOrigin + "-" + pdbTarget + ".godmd.mdcrd"
 godmd_ene = pdbOrigin + "-" + pdbTarget + ".godmd.ene.out"
+godmd_pdb = pdbOrigin + "-" + pdbTarget + ".godmd.pdb"
 
 prop = {
     'godmdin':{
@@ -341,6 +342,7 @@ godmd_run(   input_pdb_orig_path=originPDB_chain_nolig,
              output_log_path=godmd_log,
              output_ene_path=godmd_ene,
              output_trj_path=godmd_trj,
+             output_pdb_path=godmd_pdb,
              properties=prop)
 
 ```
@@ -359,13 +361,12 @@ Converting the generated **GOdMD trajectory** from the **mdcrd** format to a **d
 from biobb_analysis.ambertools.cpptraj_convert import cpptraj_convert
 
 godmd_trj_dcd = pdbOrigin + "-" + pdbTarget + ".godmd.dcd"
-reference_pdb = "reference.pdb"
 
 prop = {
     'format': 'dcd'
 }
 
-cpptraj_convert(input_top_path=reference_pdb,
+cpptraj_convert(input_top_path=godmd_pdb,
                 input_traj_path=godmd_trj,
                 output_cpptraj_path=godmd_trj_dcd,
                 properties=prop)
@@ -383,7 +384,7 @@ Visualizing the **GOdMD** computed **conformational transition** using **NGL**. 
 ```python
 # Show trajectory
 
-view = nglview.show_simpletraj(nglview.SimpletrajTrajectory(godmd_trj_dcd, reference_pdb), gui=True)
+view = nglview.show_simpletraj(nglview.SimpletrajTrajectory(godmd_trj_dcd, godmd_pdb), gui=True)
 
 view.add_representation(repr_type='tube', colorScheme = 'atomindex')
 

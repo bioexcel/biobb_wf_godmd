@@ -6,7 +6,7 @@ dependencies:
   - biobb_io==4.0.0
   - biobb_structure_utils==4.0.0
   - biobb_analysis==4.0.2
-  - biobb_godmd==4.0.0
+  - biobb_godmd==4.0.1
   - emboss
   - ipywidgets==7.6.6
   - jupyter_client==7.3.2

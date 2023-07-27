@@ -7925,6 +7925,7 @@ Alternatively, <strong>PDB files</strong> can be used as starting structures. <b
 <span class="n">godmd_log</span> <span class="o">=</span> <span class="n">pdbOrigin</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="n">pdbTarget</span> <span class="o">+</span> <span class="s2">".godmd.log"</span>
 <span class="n">godmd_trj</span> <span class="o">=</span> <span class="n">pdbOrigin</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="n">pdbTarget</span> <span class="o">+</span> <span class="s2">".godmd.mdcrd"</span>
 <span class="n">godmd_ene</span> <span class="o">=</span> <span class="n">pdbOrigin</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="n">pdbTarget</span> <span class="o">+</span> <span class="s2">".godmd.ene.out"</span>
+<span class="n">godmd_pdb</span> <span class="o">=</span> <span class="n">pdbOrigin</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="n">pdbTarget</span> <span class="o">+</span> <span class="s2">".godmd.pdb"</span>
 
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'godmdin'</span><span class="p">:{</span>
@@ -7939,6 +7940,7 @@ Alternatively, <strong>PDB files</strong> can be used as starting structures. <b
              <span class="n">output_log_path</span><span class="o">=</span><span class="n">godmd_log</span><span class="p">,</span>
              <span class="n">output_ene_path</span><span class="o">=</span><span class="n">godmd_ene</span><span class="p">,</span>
              <span class="n">output_trj_path</span><span class="o">=</span><span class="n">godmd_trj</span><span class="p">,</span>
+             <span class="n">output_pdb_path</span><span class="o">=</span><span class="n">godmd_pdb</span><span class="p">,</span>
              <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7975,13 +7977,12 @@ Alternatively, <strong>PDB files</strong> can be used as starting structures. <b
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">biobb_analysis.ambertools.cpptraj_convert</span> <span class="kn">import</span> <span class="n">cpptraj_convert</span>
 
 <span class="n">godmd_trj_dcd</span> <span class="o">=</span> <span class="n">pdbOrigin</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="n">pdbTarget</span> <span class="o">+</span> <span class="s2">".godmd.dcd"</span>
-<span class="n">reference_pdb</span> <span class="o">=</span> <span class="s2">"reference.pdb"</span>
 
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'format'</span><span class="p">:</span> <span class="s1">'dcd'</span>
 <span class="p">}</span>
 
-<span class="n">cpptraj_convert</span><span class="p">(</span><span class="n">input_top_path</span><span class="o">=</span><span class="n">reference_pdb</span><span class="p">,</span>
+<span class="n">cpptraj_convert</span><span class="p">(</span><span class="n">input_top_path</span><span class="o">=</span><span class="n">godmd_pdb</span><span class="p">,</span>
                 <span class="n">input_traj_path</span><span class="o">=</span><span class="n">godmd_trj</span><span class="p">,</span>
                 <span class="n">output_cpptraj_path</span><span class="o">=</span><span class="n">godmd_trj_dcd</span><span class="p">,</span>
                 <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
@@ -8014,7 +8015,7 @@ Alternatively, <strong>PDB files</strong> can be used as starting structures. <b
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Show trajectory</span>
 
-<span class="n">view</span> <span class="o">=</span> <span class="n">nglview</span><span class="o">.</span><span class="n">show_simpletraj</span><span class="p">(</span><span class="n">nglview</span><span class="o">.</span><span class="n">SimpletrajTrajectory</span><span class="p">(</span><span class="n">godmd_trj_dcd</span><span class="p">,</span> <span class="n">reference_pdb</span><span class="p">),</span> <span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">view</span> <span class="o">=</span> <span class="n">nglview</span><span class="o">.</span><span class="n">show_simpletraj</span><span class="p">(</span><span class="n">nglview</span><span class="o">.</span><span class="n">SimpletrajTrajectory</span><span class="p">(</span><span class="n">godmd_trj_dcd</span><span class="p">,</span> <span class="n">godmd_pdb</span><span class="p">),</span> <span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="n">repr_type</span><span class="o">=</span><span class="s1">'tube'</span><span class="p">,</span> <span class="n">colorScheme</span> <span class="o">=</span> <span class="s1">'atomindex'</span><span class="p">)</span>
 
