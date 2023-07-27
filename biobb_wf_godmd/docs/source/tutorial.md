@@ -423,7 +423,7 @@ view._remote_call('setSize', target='Widget', args=['800px','600px'])
 view
 ```
 
-<img src='_static/trans.gif'></img>
+<div style="text-align:center"><img src='_static/trans.gif'></img></div>
 
 ***
 <a id="questions"></a>
