@@ -1,4 +1,4 @@
-log*.*
+biobb_wf_godmd/notebooks/log*.*
 .ipynb_checkpoints/
 biobb_wf_godmd/notebooks/*.png
 biobb_wf_godmd/notebooks/*.gif
