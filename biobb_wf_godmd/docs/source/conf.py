@@ -35,7 +35,6 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
-    'sphinx_markdown_tables',
     'recommonmark'
 ]
 
@@ -71,7 +70,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'biobb_wf_flexdyn'
+project = u'biobb_wf_godmd'
 copyright = u'2023, Bioexcel Project'
 author = u'Bioexcel Project'
 
@@ -230,7 +229,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'biobb_wf_flexdyn_doc'
+htmlhelp_basename = 'biobb_wf_godmd_doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -252,7 +251,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'biobb_wf_flexdyn.tex', u'biobb_wf_flexdyn Documentation',
+    (master_doc, 'biobb_wf_godmd.tex', u'biobb_wf_godmd Documentation',
      u'Bioexcel Project', 'manual'),
 ]
 
@@ -282,7 +281,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'biobb_wf_flexdyn', u'biobb_wf_flexdyn Documentation',
+    (master_doc, 'biobb_wf_godmd', u'biobb_wf_godmd Documentation',
      [author], 1)
 ]
 
@@ -296,8 +295,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'biobb_wf_flexdyn', u'biobb_wf_flexdyn Documentation',
-     author, 'biobb_wf_flexdyn', 'biobb_wf_flexdyn template building block',
+    (master_doc, 'biobb_wf_godmd', u'biobb_wf_godmd Documentation',
+     author, 'biobb_wf_godmd', 'biobb_wf_godmd template building block',
      'Miscellaneous'),
 ]
 
