@@ -3,10 +3,11 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - biobb_io==4.0.0
-  - biobb_structure_utils==4.0.0
-  - biobb_analysis==4.0.2
-  - biobb_godmd==4.0.2
+  - python 3.8
+  - biobb_io==4.1.0
+  - biobb_structure_utils==4.1.0
+  - biobb_analysis==4.1.0
+  - biobb_godmd==4.1.0
   - emboss
   - ipywidgets==7.6.6
   - jupyter_client==7.3.2
