@@ -30,20 +30,33 @@ The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeli
 
 ### Auxiliar libraries used
 
-* [nb_conda_kernels](https://github.com/Anaconda-Platform/nb_conda_kernels): Enables a Jupyter Notebook or JupyterLab application in one conda environment to access kernels for Python, R, and other languages found in other environments.
-* [ipywidgets](https://github.com/jupyter-widgets/ipywidgets): Interactive HTML widgets for Jupyter notebooks and the IPython kernel.
+* [emboss](https://www.ebi.ac.uk/Tools/emboss/): Software that automatically copes with data in a variety of formats and even allows transparent retrieval of sequence data from the web.
+* [jupyter](https://jupyter.org/): Free software, open standards, and web services for interactive computing across all programming languages.
+* [plotly](https://plot.ly/python/offline/): Python interactive graphing library integrated in Jupyter notebooks.
 * [nglview](https://nglviewer.org/#nglview): Jupyter/IPython widget to interactively view molecular structures and trajectories in notebooks.
-* [plotly](https://plotly.com/python/): Python Open Source Graphing Library. 
 * [simpletraj](https://github.com/arose/simpletraj): Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.
 
 ### Conda Installation and Launch
 
+Take into account that, for this specific workflow, there are two environment files, one for linux OS and the other for mac OS:
+
+#### linux
+
 ```console
 git clone https://github.com/bioexcel/biobb_wf_godmd.git
 cd biobb_wf_godmd
-conda env create -f conda_env/environment.yml
+conda env create -f conda_env/environment.linux.yml
 conda activate biobb_wf_godmd
-jupyter-nbextension enable --py --user widgetsnbextension
+jupyter-notebook biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb
+``` 
+
+#### macos
+
+```console
+git clone https://github.com/bioexcel/biobb_wf_godmd.git
+cd biobb_wf_godmd
+conda env create -f conda_env/environment.macos.yml
+conda activate biobb_wf_godmd
 jupyter-notebook biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb
 ``` 
 
