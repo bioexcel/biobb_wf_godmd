@@ -11,7 +11,7 @@ dependencies:
   - emboss
   - ipywidgets==7.6.6
   - jupyter_client==7.3.2
-  #- traitlets==5.9.0
+  - importlib_metadata
   - plotly
   - nglview
   - simpletraj
