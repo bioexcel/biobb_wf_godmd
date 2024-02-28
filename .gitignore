@@ -10,5 +10,7 @@ biobb_wf_godmd/notebooks/*.log
 biobb_wf_godmd/notebooks/*.mdcrd
 biobb_wf_godmd/notebooks/*.web.ipynb
 biobb_wf_godmd/notebooks/*.docs.ipynb
+biobb_wf_godmd/docs/notebooks/
+biobb_wf_godmd/html/biobb_wf_godmd.web.ipynb
 .DS_Store
 guidelines.md

@@ -7444,7 +7444,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Protein-Conformational-Transitions-calculations-tutorial-using-BioExcel-Building-Blocks-(biobb)-and-GOdMD">Protein Conformational Transitions calculations tutorial using BioExcel Building Blocks (biobb) and GOdMD<a class="anchor-link" href="#Protein-Conformational-Transitions-calculations-tutorial-using-BioExcel-Building-Blocks-(biobb)-and-GOdMD">¶</a></h1><hr/>
 <p>This tutorial aims to illustrate the process of computing a <strong>conformational transition</strong> between two known <strong>structural conformations</strong> of a protein, step by step, using the <strong>BioExcel Building Blocks library (biobb)</strong>.</p>
-<p>Examples shown are the calculation of the conformational transition for the <strong>Adenylate Kinase</strong> protein, from the <strong>closed state</strong> (PDB Code <a href="https://www.rcsb.org/structure/1AKE">1AKE</a>) to the <strong>open state</strong> (PDB Code <a href="https://www.rcsb.org/structure/4AKE">4AKE</a>). <strong>Adenylate Kinases</strong> are <strong>phosphotransferase enzymes</strong> that catalyze the interconversion of the various <strong>adenosine phosphates</strong> (ATP, ADP, and AMP), and are known to undergo large <strong>conformational changes</strong> during their <strong>catalytic cycle</strong>.</p>
+<p>Examples shown are the calculation of the conformational transition for the <strong>Adenylate Kinase</strong> protein, from the <strong>closed state</strong> (PDB Code <a href="https://www.rcsb.org/structure/1AKE">1AKE</a>, <a href="https://doi.org/10.2210/pdb1AKE/pdb">https://doi.org/10.2210/pdb1AKE/pdb</a>) to the <strong>open state</strong> (PDB Code <a href="https://www.rcsb.org/structure/4AKE">4AKE</a>, <a href="https://doi.org/10.2210/pdb4AKE/pdb">https://doi.org/10.2210/pdb4AKE/pdb</a>). <strong>Adenylate Kinases</strong> are <strong>phosphotransferase enzymes</strong> that catalyze the interconversion of the various <strong>adenosine phosphates</strong> (ATP, ADP, and AMP), and are known to undergo large <strong>conformational changes</strong> during their <strong>catalytic cycle</strong>.</p>
 <p>The code wrapped is the <em><strong>GOdMD</strong></em> method, developed in the <strong><a href="https://mmb.irbbarcelona.org/www/">Molecular Modeling and Bioinformatics</a> group</strong> (IRB Barcelona). <strong>GOdMD</strong> determines pathways for <strong>conformational transitions</strong> in macromolecules using <strong>discrete molecular dynamics</strong> and <strong>biasing techniques</strong> based on a combination of <strong>essential dynamics</strong> and <strong>Maxwell-Demon sampling techniques</strong>. A web implementation of the method can be found here: <a href="https://mmb.irbbarcelona.org/GOdMD/index.php">https://mmb.irbbarcelona.org/GOdMD/index.php</a></p>
 <p><strong>Exploration of conformational transition pathways from coarse-grained simulations.</strong><br/>
 <em>Sfriso P, Hospital A, Emperador A, Orozco M.</em><br/>
@@ -7508,13 +7508,13 @@ a.anchor-link {
 <ul>
 <li><p><strong>Auxiliar libraries</strong>: Libraries to be used in the workflow are imported once at the beginning</p>
 </li>
-<li><p><strong>pdbOrigin</strong>: PDB code for the origin structure (e.g. 1AKE)</p>
+<li><p><strong>pdbOrigin</strong>: PDB code for the origin structure (e.g. 1AKE, <a href="https://doi.org/10.2210/pdb1AKE/pdb">https://doi.org/10.2210/pdb1AKE/pdb</a>)</p>
 </li>
 <li><p><strong>chainOrigin</strong>: Chain for the origin structure (e.g. A)</p>
 </li>
-<li><p><strong>ligandOrigin</strong>: Ligand (if present) for the origin structure (e.g. AP5)</p>
+<li><p><strong>ligandOrigin</strong>: Ligand (if present) for the origin structure (e.g. AP5, Drugbank <a href="https://go.drugbank.com/drugs/DB01717">DB01717</a>)</p>
 </li>
-<li><p><strong>pdbTarget</strong>: PDB code for the target structure (e.g. 4AKE)</p>
+<li><p><strong>pdbTarget</strong>: PDB code for the target structure (e.g. 4AKE, <a href="https://doi.org/10.2210/pdb4AKE/pdb">https://doi.org/10.2210/pdb4AKE/pdb</a>)</p>
 </li>
 <li><p><strong>chainTarget</strong>: Chain for the target structure (e.g. A)</p>
 </li>
