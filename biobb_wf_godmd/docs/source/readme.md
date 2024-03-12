@@ -28,7 +28,7 @@ The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeli
  * [biobb_analysis](https://github.com/bioexcel/biobb_analysis): Tools to analyse Molecular Dynamics trajectories.
 
 
-### Auxiliar libraries used
+### Auxiliary libraries used
 
 * [emboss](https://www.ebi.ac.uk/Tools/emboss/): Software that automatically copes with data in a variety of formats and even allows transparent retrieval of sequence data from the web.
 * [jupyter](https://jupyter.org/): Free software, open standards, and web services for interactive computing across all programming languages.

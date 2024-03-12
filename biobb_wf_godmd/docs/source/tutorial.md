@@ -23,7 +23,7 @@ The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeli
  - [biobb_structure_utils](https://github.com/bioexcel/biobb_structure_utils): Tools to modify or extract information from a PDB structure.
  - [biobb_analysis](https://github.com/bioexcel/biobb_analysis): Tools to analyse Molecular Dynamics trajectories.
   
-### Auxiliar libraries used
+### Auxiliary libraries used
 
 * [emboss](https://www.ebi.ac.uk/Tools/emboss/): Software that automatically copes with data in a variety of formats and even allows transparent retrieval of sequence data from the web.
 * [jupyter](https://jupyter.org/): Free software, open standards, and web services for interactive computing across all programming languages.
@@ -74,7 +74,7 @@ jupyter-notebook biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb
 <a id="input"></a>
 ## Input parameters
 **Input parameters** needed:
- - **Auxiliar libraries**: Libraries to be used in the workflow are imported once at the beginning
+ - **Auxiliary libraries**: Libraries to be used in the workflow are imported once at the beginning
  
  
  - **pdbOrigin**: PDB code for the origin structure (e.g. 1AKE, [https://doi.org/10.2210/pdb1AKE/pdb](https://doi.org/10.2210/pdb1AKE/pdb))
