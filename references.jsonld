@@ -1,0 +1,34 @@
+
+{
+	"@context": "http://schema.org",
+	"name": "Protein conformational transitions calculations workflow",
+	"@type": "ItemList",
+	"itemListElement": [
+		{
+			"@type": "SoftwareApplication",
+			"@id": "https://raw.githubusercontent.com/bioexcel/biobb/master/references.jsonld",
+			"name": "biobb"
+		},
+		{
+			"@type": "SoftwareApplication",
+			"@id": "https://raw.githubusercontent.com/bioexcel/biobb_io/master/references.jsonld",
+			"name": "biobb_io"
+		},
+		{
+			"@type": "SoftwareApplication",
+			"@id": "https://raw.githubusercontent.com/bioexcel/biobb_godmd/master/references.jsonld",
+			"name": "biobb_godmd"
+		},
+		{
+			"@type": "SoftwareApplication",
+			"@id": "https://raw.githubusercontent.com/bioexcel/biobb_structure_utils/master/references.jsonld",
+			"name": "biobb_structure_utils"
+		},
+		{
+			"@type": "SoftwareApplication",
+			"@id": "https://raw.githubusercontent.com/bioexcel/biobb_analysis/master/references.jsonld",
+			"name": "biobb_analysis"
+		}
+	]
+}
+   
