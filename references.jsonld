@@ -1,8 +1,9 @@
 
 {
 	"@context": "http://schema.org",
-	"name": "Protein conformational transitions calculations workflow",
+	"@id": "https://github.com/bioexcel/biobb_wf_godmd",
 	"@type": "ItemList",
+	"name": "Protein conformational transitions calculations workflow",
 	"itemListElement": [
 		{
 			"@type": "SoftwareApplication",
