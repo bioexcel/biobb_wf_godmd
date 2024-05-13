@@ -33,24 +33,10 @@ The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeli
 
 ### Conda Installation and Launch
 
-Take into account that, for this specific workflow, there are two environment files, one for linux OS and the other for mac OS:
-
-#### linux
-
 ```console
 git clone https://github.com/bioexcel/biobb_wf_godmd.git
 cd biobb_wf_godmd
-conda env create -f conda_env/environment.linux.yml
-conda activate biobb_wf_godmd
-jupyter-notebook biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb
-``` 
-
-#### macos
-
-```console
-git clone https://github.com/bioexcel/biobb_wf_godmd.git
-cd biobb_wf_godmd
-conda env create -f conda_env/environment.macos.yml
+conda env create -f conda_env/environment.yml
 conda activate biobb_wf_godmd
 jupyter-notebook biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb
 ``` 
