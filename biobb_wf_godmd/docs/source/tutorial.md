@@ -5,12 +5,12 @@ This tutorial aims to illustrate the process of computing a **conformational tra
 
 Examples shown are the calculation of the conformational transition for the **Adenylate Kinase** protein, from the **closed state** (PDB Code [1AKE](https://www.rcsb.org/structure/1AKE), [https://doi.org/10.2210/pdb1AKE/pdb](https://doi.org/10.2210/pdb1AKE/pdb)) to the **open state** (PDB Code [4AKE](https://www.rcsb.org/structure/4AKE), [https://doi.org/10.2210/pdb4AKE/pdb](https://doi.org/10.2210/pdb4AKE/pdb)). **Adenylate Kinases** are **phosphotransferase enzymes** that catalyze the interconversion of the various **adenosine phosphates** (ATP, ADP, and AMP), and are known to undergo large **conformational changes** during their **catalytic cycle**.
 
-The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeling and Bioinformatics](https://mmb.irbbarcelona.org/www/) group** (IRB Barcelona). **GOdMD** determines pathways for **conformational transitions** in macromolecules using **discrete molecular dynamics** and **biasing techniques** based on a combination of **essential dynamics** and **Maxwell-Demon sampling techniques**. A web implementation of the method can be found here: [https://mmb.irbbarcelona.org/GOdMD/index.php](https://mmb.irbbarcelona.org/GOdMD/index.php)
+The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeling and Bioinformatics](https://mmb.irbbarcelona.org/www/) group** (IRB Barcelona). **GOdMD** determines pathways for **conformational transitions** in macromolecules using **discrete molecular dynamics** and **biasing techniques** based on a combination of **essential dynamics** and **Maxwell-Demon sampling techniques**. A web implementation of the method can be found here: https://mmb.irbbarcelona.org/GOdMD/index.php
 
 **Exploration of conformational transition pathways from coarse-grained simulations.**<br>
 *Sfriso P, Hospital A, Emperador A, Orozco M.*<br>
 *Bioinformatics, 129(16):1980-6.*<br>
-*Available at: [https://doi.org/10.1093/bioinformatics/btt324](https://doi.org/10.1093/bioinformatics/btt324)*
+*Available at: https://doi.org/10.1093/bioinformatics/btt324*
 
 ***
 
@@ -57,10 +57,54 @@ jupyter-notebook biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb
 
 ***
 
+## Initializing colab
+The two cells below are used only in case this notebook is executed via **Google Colab**. Take into account that, for running conda on **Google Colab**, the **condacolab** library must be installed. As [explained here](https://pypi.org/project/condacolab/), the installation requires a **kernel restart**, so when running this notebook in **Google Colab**, don't run all cells until this **installation** is properly **finished** and the **kernel** has **restarted**.
+
+
+```python
+# Only executed when using google colab
+import sys
+if 'google.colab' in sys.modules:
+  import subprocess
+  from pathlib import Path
+  try:
+    subprocess.run(["conda", "-V"], check=True)
+  except FileNotFoundError:
+    subprocess.run([sys.executable, "-m", "pip", "install", "condacolab"], check=True)
+    import condacolab
+    condacolab.install()
+    # Clone repository
+    repo_URL = "https://github.com/bioexcel/biobb_wf_godmd.git"
+    repo_name = Path(repo_URL).name.split('.')[0]
+    if not Path(repo_name).exists():
+      subprocess.run(["mamba", "install", "-y", "git"], check=True)
+      subprocess.run(["git", "clone", repo_URL], check=True)
+      print("⏬ Repository properly cloned.")
+    # Install environment
+    print("⏳ Creating environment...")
+    env_file_path = f"{repo_name}/conda_env/environment.yml"
+    subprocess.run(["mamba", "env", "update", "-n", "base", "-f", env_file_path], check=True)
+    print("🎨 Install NGLView dependencies...")
+    subprocess.run(["mamba", "install", "-y", "-c", "conda-forge", "nglview==3.0.8", "ipywidgets=7.7.2"], check=True)
+    print("👍 Conda environment successfully created and updated.")
+```
+
+
+```python
+# Enable widgets for colab
+if 'google.colab' in sys.modules:
+  from google.colab import output
+  output.enable_custom_widget_manager()
+  # Change working dir
+  import os
+  os.chdir("biobb_wf_godmd/biobb_wf_godmd/notebooks")
+  print(f"📂 New working directory: {os.getcwd()}")
+```
+
 <a id="input"></a>
 ## Input parameters
 **Input parameters** needed:
- - **Auxiliary libraries**: Libraries to be used in the workflow are imported once at the beginning
+ - **y libraries**: Libraries to be used in the workflow are imported once at the beginning
  
  
  - **pdbOrigin**: PDB code for the origin structure (e.g. 1AKE, [https://doi.org/10.2210/pdb1AKE/pdb](https://doi.org/10.2210/pdb1AKE/pdb))
@@ -168,7 +212,7 @@ view2
 ipywidgets.HBox([view1, view2])
 ```
 
-<img src='_static/ngl1.png' style='float:left;width:50%;'></img><img src='_static/ngl2.png' style='float:left;width:50%;'></img>
+<img src='_static/ngl1.png' style="float:left; width:50%;"></img><img src='_static/ngl2.png' style="float:left; width:50%;"></img>
 
 <a id="preparing"></a>
 ***
@@ -276,7 +320,7 @@ view2
 ipywidgets.HBox([view1, view2])
 ```
 
-<img src='_static/ngl3.png' style='float:left;width:50%;'></img><img src='_static/ngl4.png' style='float:left;width:50%;'></img>
+<img src='_static/ngl3.png' style="float:left; width:50%;"></img><img src='_static/ngl4.png' style="float:left; width:50%;"></img>
 
 <a id="mapping"></a>
 ***
@@ -345,10 +389,10 @@ godmd_run(   input_pdb_orig_path=originPDB_chain_nolig,
 
 ```
 
-<a id="dcd"></a>
+<a id="xtc"></a>
 ***
-## Converting trajectory to DCD (visualization)
-Converting the generated **GOdMD trajectory** from the **mdcrd** format to a **dcd** format, for the sake of visualization with **NGL** (see next cell).<br> <br>
+## Converting trajectory to XTC (visualization)
+Converting the generated **GOdMD trajectory** from the **mdcrd** format to a **xtc** format, for the sake of visualization with **NGL** (see next cell).<br> <br>
 ***
 **Building Blocks** used:
  - [cpptraj_convert](https://biobb-analysis.readthedocs.io/en/latest/ambertools.html#module-ambertools.cpptraj_convert) from **biobb_analysis.ambertools.cpptraj_convert**
@@ -358,15 +402,15 @@ Converting the generated **GOdMD trajectory** from the **mdcrd** format to a **d
 ```python
 from biobb_analysis.ambertools.cpptraj_convert import cpptraj_convert
 
-godmd_trj_dcd = pdbOrigin + "-" + pdbTarget + ".godmd.dcd"
+godmd_trj_xtc = pdbOrigin + "-" + pdbTarget + ".godmd.xtc"
 
 prop = {
-    'format': 'dcd'
+    'format': 'xtc'
 }
 
 cpptraj_convert(input_top_path=godmd_pdb,
                 input_traj_path=godmd_trj,
-                output_cpptraj_path=godmd_trj_dcd,
+                output_cpptraj_path=godmd_trj_xtc,
                 properties=prop)
 
 ```
@@ -382,19 +426,19 @@ Visualizing the **GOdMD** computed **conformational transition** using **NGL**. 
 ```python
 # Show trajectory
 
-view = nglview.show_simpletraj(nglview.SimpletrajTrajectory(godmd_trj_dcd, godmd_pdb), gui=True)
+view = nglview.show_simpletraj(nglview.SimpletrajTrajectory(godmd_trj_xtc, godmd_pdb), gui=True)
 
 view.add_representation(repr_type='tube', colorScheme = 'atomindex')
 
-# Origin Structure
-b = view.add_component(originPDB_chain_nolig)
+# Origin Structure (comment when executing in google colab)
+b = view.add_component(nglview.FileStructure(originPDB_chain_nolig))
 b.clear_representations()
 b.add_representation(repr_type='tube',
                         opacity=.2,
                         color='blue')
 
-# Target Structure
-c = view.add_component(targetPDB_chain_nolig)
+# Target Structure (comment when executing in google colab)
+c = view.add_component(nglview.FileStructure(targetPDB_chain_nolig))
 c.clear_representations()
 c.add_representation(repr_type='tube', 
                        opacity=.2,
@@ -416,13 +460,14 @@ s[ 1 ].updateRepresentations({ position: true })
 s[ 1 ].autoView()
 """
 
+#  (comment when executing in google colab)
 view._execute_js_code(code)
 
 view._remote_call('setSize', target='Widget', args=['800px','600px'])
 view
 ```
 
-<div style="text-align:center"><img src='_static/trans.gif'></img></div>
+<img src='_static/trans.gif'></img>
 
 ***
 <a id="questions"></a>
