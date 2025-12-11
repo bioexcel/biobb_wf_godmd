@@ -8,6 +8,8 @@ dependencies:
   - biobb_analysis==5.1.0
   - biobb_godmd==5.1.1
   - emboss
-  - plotly
+  - jupyterlab=3.6
+  - nodejs=16
+  - ipywidgets=7
   - nglview
   - simpletraj

@@ -9,6 +9,5 @@ dependencies:
   - biobb_godmd==5.1.1
   - emboss
   - jupyter
-  - plotly
   - nglview
   - simpletraj
