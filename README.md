@@ -1,5 +1,3 @@
-[![](https://img.shields.io/badge/Google%20Colab-Open-orange?logo=google-colab)](https://colab.research.google.com/github/bioexcel/biobb_wf_godmd/blob/main/biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb)
-
 # Protein conformational transitions calculations tutorial using BioExcel Building Blocks (biobb) and GOdMD
 
 ***
@@ -44,12 +42,6 @@ conda env create -f conda_env/environment.yml
 conda activate biobb_wf_godmd
 jupyter-notebook biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb
 ```
-
-***
-
-## Tutorial
-
-Click here to [open tutorial in Google Colab](https://colab.research.google.com/github/bioexcel/biobb_wf_godmd/blob/main/biobb_wf_godmd/notebooks/biobb_wf_godmd.ipynb)
 
 ***
 
