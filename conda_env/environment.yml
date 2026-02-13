@@ -9,5 +9,5 @@ dependencies:
   - biobb_godmd>=5.2.0=pyhdfd78af_3
   - emboss
   - jupyter
-  - nglview
+  - nglview<=4.0
   - simpletraj
