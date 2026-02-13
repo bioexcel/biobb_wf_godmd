@@ -8,6 +8,7 @@ biobb_wf_godmd/notebooks/*.dcd
 biobb_wf_godmd/notebooks/*.out
 biobb_wf_godmd/notebooks/*.log
 biobb_wf_godmd/notebooks/*.mdcrd
+biobb_wf_godmd/notebooks/*.xtc*
 biobb_wf_godmd/notebooks/*.web.ipynb
 biobb_wf_godmd/notebooks/*.docs.ipynb
 biobb_wf_godmd/docs/notebooks/
