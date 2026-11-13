@@ -34,8 +34,7 @@ The code wrapped is the ***GOdMD*** method, developed in the **[Molecular Modeli
 * [emboss](https://www.ebi.ac.uk/Tools/emboss/): Software that automatically copes with data in a variety of formats and even allows transparent retrieval of sequence data from the web.
 * [jupyter](https://jupyter.org/): Free software, open standards, and web services for interactive computing across all programming languages.
 * [plotly](https://plot.ly/python/offline/): Python interactive graphing library integrated in Jupyter notebooks.
-* [nglview](https://nglviewer.org/#nglview): Jupyter/IPython widget to interactively view molecular structures and trajectories in notebooks.
-* [simpletraj](https://github.com/arose/simpletraj): Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.
+* [molviewspec](https://molstar.org/mol-view-spec/): Python toolkit to describe molecular scenes and display them with the [Mol*](https://molstar.org/) viewer in notebooks.
 
 ### Conda Installation and Launch
 
