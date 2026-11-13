@@ -9,6 +9,6 @@ dependencies:
   - biobb_analysis==5.3.1
   - biobb_godmd==5.3.1
   - emboss
-  - jupyterlab=3.6
-  - nodejs=16
+  # - jupyterlab=3.6
+  # - nodejs=16
   - molviewspec>=1.8
