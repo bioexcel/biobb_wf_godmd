@@ -9,6 +9,7 @@ dependencies:
   - biobb_analysis==5.3.1
   - biobb_godmd==5.3.1
   - emboss
-  # - jupyterlab=3.6
-  # - nodejs=16
+  # ambertools 26 ships a dangling bin/amber.conda symlink that crashes
+  # `mamba clean` (run by repo2docker); see conda-forge/ambertools-feedstock#193
+  - ambertools<26
   - molviewspec>=1.8
